@@ -1,0 +1,52 @@
+// Contract addresses — dual-network support (testnet + mainnet)
+
+/** Testnet addresses (0G Galileo, chainId 16602) */
+export const TESTNET_CONTRACTS = {
+  INFT: (process.env.NEXT_PUBLIC_TESTNET_INFT_ADDRESS ??
+    "0xC7f8298571726b7F79093E6343e16c00a04df5F8") as `0x${string}`,
+  MARKETPLACE: (process.env.NEXT_PUBLIC_TESTNET_MARKETPLACE_ADDRESS ??
+    "0x91D1e023A9FAdeC831abE5d52247eC78998d471F") as `0x${string}`,
+  REGISTRY: (process.env.NEXT_PUBLIC_TESTNET_REGISTRY_ADDRESS ??
+    "0xA6D1c437CBDe470A7C317aA61E9DC6E54c114d60") as `0x${string}`,
+  MEMORY: (process.env.NEXT_PUBLIC_TESTNET_MEMORY_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  ATTESTATION: (process.env.NEXT_PUBLIC_TESTNET_ATTESTATION_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  FINE_TUNING: (process.env.NEXT_PUBLIC_TESTNET_FINETUNING_ADDRESS ??
+    "0x25e00De35C3d9C6A35B2F430B815EA816571d3A1") as `0x${string}`,
+  DAO: (process.env.NEXT_PUBLIC_TESTNET_DAO_ADDRESS ??
+    "0xFc24dD77E47974A0747e89fe81D9a13C254238C1") as `0x${string}`,
+  MULTIMODAL: (process.env.NEXT_PUBLIC_TESTNET_MULTIMODAL_ADDRESS ??
+    "0x45588B3385dA81eA873467569a9Ad21254CB273F") as `0x${string}`,
+} as const;
+
+/** Mainnet addresses (0G Mainnet, chainId 16661) — set after mainnet deploy */
+export const MAINNET_CONTRACTS = {
+  INFT: (process.env.NEXT_PUBLIC_MAINNET_INFT_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  MARKETPLACE: (process.env.NEXT_PUBLIC_MAINNET_MARKETPLACE_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  REGISTRY: (process.env.NEXT_PUBLIC_MAINNET_REGISTRY_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  MEMORY: (process.env.NEXT_PUBLIC_MAINNET_MEMORY_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  ATTESTATION: (process.env.NEXT_PUBLIC_MAINNET_ATTESTATION_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  FINE_TUNING: (process.env.NEXT_PUBLIC_MAINNET_FINETUNING_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  DAO: (process.env.NEXT_PUBLIC_MAINNET_DAO_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+  MULTIMODAL: (process.env.NEXT_PUBLIC_MAINNET_MULTIMODAL_ADDRESS ??
+    "0x0000000000000000000000000000000000000000") as `0x${string}`,
+} as const;
+
+/** Active contract addresses — resolved by env or defaults to mainnet for production */
+const defaultChain = process.env.NEXT_PUBLIC_DEFAULT_CHAIN ?? "testnet";
+
+export const CONTRACTS = defaultChain === "mainnet" ? MAINNET_CONTRACTS : TESTNET_CONTRACTS;
+
+/** Helper to get contracts for a specific chain */
+export function getContractsForChain(chainId: number) {
+  if (chainId === 16661) return MAINNET_CONTRACTS;
+  return TESTNET_CONTRACTS;
+}

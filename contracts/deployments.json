@@ -1,0 +1,53 @@
+{
+  "network": "0g-testnet",
+  "chainId": "16602",
+  "deployer": "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587",
+  "contracts": {
+    "MockVerifier": "0xDCf38Df3664576878fE9dE80C6FDA0c3e17ceEDc",
+    "GravitonINFT": "0xC7f8298571726b7F79093E6343e16c00a04df5F8",
+    "GravitonMarketplace": "0x91D1e023A9FAdeC831abE5d52247eC78998d471F",
+    "GravitonRegistry": "0xA6D1c437CBDe470A7C317aA61E9DC6E54c114d60",
+    "GravitonMemory": "0x4c29bD1fC7e9Ac68F629e1BcaE11a7CD16F0a3Ca",
+    "GravitonAttestation": "0x876bcf409a673Bb5D610163e41FBcB38937f9824",
+    "GravitonFineTuning": "0x25e00De35C3d9C6A35B2F430B815EA816571d3A1",
+    "GravitonDAO": "0xFc24dD77E47974A0747e89fe81D9a13C254238C1",
+    "GravitonMultiModal": "0x45588B3385dA81eA873467569a9Ad21254CB273F"
+  },
+  "constructorArgs": {
+    "MockVerifier": [],
+    "GravitonINFT": [
+      "Graviton Agent NFT",
+      "GRVT",
+      "0xDCf38Df3664576878fE9dE80C6FDA0c3e17ceEDc",
+      "0G-Storage-Testnet",
+      "1000000000000000",
+      "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587"
+    ],
+    "GravitonMarketplace": [
+      "0xC7f8298571726b7F79093E6343e16c00a04df5F8",
+      250,
+      "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587"
+    ],
+    "GravitonRegistry": [
+      "0xC7f8298571726b7F79093E6343e16c00a04df5F8",
+      "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587"
+    ],
+    "GravitonMemory": [
+      "0xC7f8298571726b7F79093E6343e16c00a04df5F8",
+      "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587"
+    ],
+    "GravitonAttestation": [
+      "0xC7f8298571726b7F79093E6343e16c00a04df5F8",
+      "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587"
+    ],
+    "GravitonFineTuning": [
+      "0xC7f8298571726b7F79093E6343e16c00a04df5F8",
+      "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587"
+    ],
+    "GravitonDAO": [
+      "0xC7f8298571726b7F79093E6343e16c00a04df5F8",
+      "0x33869dB29F1C57ed2E3Bc0efdA583844bcF95587"
+    ]
+  },
+  "timestamp": "2026-04-15T19:57:11.667Z"
+}
